@@ -22,3 +22,4 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 });
 
 Route::get('/vacantes/{vacante}', [App\Http\Controllers\VacanteController::class, 'show'])->name('vacantes.show');
+Route::post('/candidatos/store', [App\Http\Controllers\CandidatoController::class, 'store'])->name('candidatos.store');

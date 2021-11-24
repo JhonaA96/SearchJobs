@@ -34,8 +34,6 @@
                 {!!$vacante->descripcion!!}
             </div>
         </div>
-        <aside class="md:w-2/5">
-            
-        </div>
+        @include('ui.contacto')
     </div>
 @endsection
