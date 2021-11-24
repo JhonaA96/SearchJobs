@@ -18,7 +18,7 @@ class UsuarioSeed extends Seeder
     {
         DB::table('users')->insert([
             'name'=> 'Jhonatan Acuña',
-            'email' => 'correo@correo',
+            'email' => 'correo@correo.com',
             'email_verified_at' => Carbon::now(),
             'password' => Hash::make('Perla2040'),
             'created_at' => Carbon::now(),
