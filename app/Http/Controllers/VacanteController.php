@@ -121,4 +121,10 @@ class VacanteController extends Controller
     {
         //
     }
+
+    public function estado(Request $request, Vacante $vacante){
+        $vacante->activa = $$request->estado;
+        $vacante->save();
+        return response()->json($vacante);
+    }
 }
