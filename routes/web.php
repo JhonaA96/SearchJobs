@@ -18,6 +18,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/vacantes', [App\Http\Controllers\VacanteController::class, 'index'])->name('vacantes.index');
     Route::get('/vacantes/create', [App\Http\Controllers\VacanteController::class, 'create'])->name('vacantes.create');
     Route::post('/vacantes', [App\Http\Controllers\VacanteController::class, 'store'])->name('vacantes.store');
+    Route::delete('/vacantes/{vacante}', [App\Http\Controllers\VacanteController::class, 'destroy'])->name('vacantes.destroy');
     Route::post('/vacantes/{vacante}', [App\Http\Controllers\VacanteController::class, 'estado'])->name('vacantes.estado');
     Route::get('/notificaciones', [App\Http\Controllers\NotificacionesController::class, '__invoke'])->name('notificaciones');
 });
