@@ -31,7 +31,6 @@ export default {
                 this.estadoVacanteData = 1;
             }
 
-            // Enviar a axios
             const params = {
                 estado: this.estadoVacanteData
             }

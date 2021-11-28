@@ -2095,8 +2095,7 @@ __webpack_require__.r(__webpack_exports__);
         this.estadoVacanteData = 0;
       } else {
         this.estadoVacanteData = 1;
-      } // Enviar a axios
-
+      }
 
       var params = {
         estado: this.estadoVacanteData
