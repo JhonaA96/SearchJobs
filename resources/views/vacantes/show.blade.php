@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('navegacion')
+    @include('ui.categoriasnav')
+@endsection
+
 @section('content')
     <h1 class="text-3xl text-center mt-10">{{$vacante->titulo}}</h1>
     <div class="mt-10 mb-20 md:flex items-start">
@@ -34,6 +38,8 @@
                 {!!$vacante->descripcion!!}
             </div>
         </div>
-        @include('ui.contacto')
+        @if($vacante->activa === 1)
+            @include('ui.contacto')
+        @endif
     </div>
 @endsection

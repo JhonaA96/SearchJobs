@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Auth::routes(['verify' => true]);
-Route::get('/home', 'VacantesController@index')->name('home');
+
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/vacantes', [App\Http\Controllers\VacanteController::class, 'index'])->name('vacantes.index');
     Route::get('/vacantes/create', [App\Http\Controllers\VacanteController::class, 'create'])->name('vacantes.create');
@@ -27,6 +27,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/notificaciones', [App\Http\Controllers\NotificacionesController::class, '__invoke'])->name('notificaciones');
 });
 
+Route::get('/busqueda/buscar', [App\Http\Controllers\VacanteController::class, 'resultados'])->name('vacantes.resultados');
+Route::post('/busqueda/buscar', [App\Http\Controllers\VacanteController::class, 'buscar'])->name('vacantes.buscar');
 Route::get('/vacantes/{vacante}', [App\Http\Controllers\VacanteController::class, 'show'])->name('vacantes.show');
 Route::get('/candidatos/{id}', [App\Http\Controllers\CandidatoController::class, 'index'])->name('candidatos.index');
 Route::post('/candidatos/store', [App\Http\Controllers\CandidatoController::class, 'store'])->name('candidatos.store');
+Route::get('/', [App\Http\Controllers\InicioController::class, '__invoke'])->name('Inicio');
+Route::get('/categorias/{categoria}', [App\Http\Controllers\CategoriaController::class, 'show'])->name('categorias.show');
